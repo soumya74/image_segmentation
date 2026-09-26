@@ -1,5 +1,5 @@
 # configs/cityscapes.yaml
-path: ../datasets/cityscapes  # dataset root dir (relative to the Colab execution folder)
+path: /content/datasets/cityscapes  # dataset root dir (relative to the Colab execution folder)
 train: images/train           # train images (relative to 'path')
 val: images/val               # val images (relative to 'path')
 test: images/test             # test images (optional)
