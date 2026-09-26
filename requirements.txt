@@ -1,0 +1,6 @@
+# requirements.txt
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0
+opencv-python-headless
+numpy
