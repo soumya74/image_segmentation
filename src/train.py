@@ -31,6 +31,32 @@ def main():
     print("Initializing DeepLabV3...")
     model = get_deeplabv3_resnet50(num_classes=19).to(device)
 
+    # FREEZE THE RESNET BACKBONE
+    #for name, param in model.named_parameters():
+    #    if 'backbone' in name:
+    #        param.requires_grad = False
+
+    # SEPARATE LEARNING RATE FOR DEEPLABV3 AND NEW LAYER
+    #print("Initializing DeepLabV3...")
+    #model = get_deeplabv3_resnet50(num_classes=19).to(device)
+
+    # Separate the parameters into backbone and head
+    #backbone_params = []
+    #head_params = []
+    #for name, param in model.named_parameters():
+    #    if 'backbone' in name:
+    #        backbone_params.append(param)
+    #    else:
+    #        head_params.append(param)
+
+    # Apply a 10x smaller learning rate to the pre-trained backbone
+    #optimizer = optim.Adam([
+    #    {'params': backbone_params, 'lr': learning_rate * 0.1},
+    #    {'params': head_params, 'lr': learning_rate}
+    #])
+    
+    #criterion = nn.CrossEntropyLoss(ignore_index=255)
+
     criterion = nn.CrossEntropyLoss(ignore_index=255)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
