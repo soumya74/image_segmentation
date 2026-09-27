@@ -15,7 +15,7 @@ def main():
     
     dataset_root = "/content/datasets/cityscapes"
     batch_size = 8
-    epochs = 20
+    epochs = 10
     learning_rate = 1e-4
 
     img_transform = transforms.Compose([
