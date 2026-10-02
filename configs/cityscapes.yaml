@@ -1,11 +1,17 @@
 # configs/cityscapes.yaml
-path: /content/datasets/cityscapes  # dataset root dir (relative to the Colab execution folder)
-train: images/train           # train images (relative to 'path')
-val: images/val               # val images (relative to 'path')
-test: images/test             # test images (optional)
+dataset:
+  root_dir: "/content/datasets/cityscapes"
+  num_classes: 19
+  ignore_index: 255
 
-# Note: Ultralytics expects single-channel PNG masks in a matching 'masks/' directory
-masks_dir: masks              # directory containing semantic masks
+training:
+  batch_size: 8
+  epochs: 20
+  learning_rate: 0.0001
+  
+transforms:
+  image_height: 256
+  image_width: 512
 
 # Classes (Cityscapes 19 evaluation classes)
 names:
