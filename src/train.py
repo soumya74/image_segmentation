@@ -13,7 +13,7 @@ from metrics import calculate_miou
 
 def main():
     # Load configuration from the config folder
-    with open("config/cityscapes.yaml", "r") as f:
+    with open("configs/cityscapes.yaml", "r") as f:
         config = yaml.safe_load(f)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
