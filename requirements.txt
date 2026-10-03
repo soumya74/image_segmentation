@@ -1,5 +1,15 @@
+# Core Training & Data Processing
 torch>=2.0.0
 torchvision>=0.15.0
-Pillow
 numpy
+Pillow
 tqdm
+pyyaml
+tensorboard
+
+# ONNX Graph Export & Validation
+onnx>=1.14.0
+
+# Intel OpenVINO Edge Deployment & Inference
+openvino>=2024.0.0
+opencv-python

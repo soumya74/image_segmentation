@@ -16,6 +16,12 @@ if 'Loss/train' in ea.scalars.Keys():
     df = pd.DataFrame([(e.step, e.value) for e in loss_events], columns=['Step', 'Loss'])
     
     print(df.head())
+
+    # Prints (rows, columns) -> (2, 3)
+    print(df.shape) 
+
+    # Prints total number of elements (rows * columns) -> 6
+    print(df.size)
     
     # Optional: Save it as a readable CSV
     # df.to_csv("training_loss.csv", index=False)
