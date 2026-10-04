@@ -25,6 +25,7 @@ Benchmarking the exact same DeepLabV3 graph across different execution backends 
 | **PyTorch (Native CPU Baseline)** | 1597.15 ms | 0.63 FPS |
 | **OpenVINO (CPU Optimized)**| 886.74 ms | 1.13 FPS |
 | **OpenVINO (Intel Core Ultra NPU)** | **89.40 ms** | **11.19 FPS** |
+| **OpenVINO (Intel Core Ultra GPU)** | **58.82 ms** | **17 FPS** |
 
 ### Conclusion
 Relying on unoptimized PyTorch for edge execution was computationally unviable, taking over 1.5 seconds per frame. By converting the model to OpenVINO IR and routing the compute to the dedicated Intel NPU, latency plummeted to under 90 milliseconds. This unlocked near real-time 11.19 FPS performance for a complex segmentation network while leaving the primary system CPU and GPU cores completely unburdened.
